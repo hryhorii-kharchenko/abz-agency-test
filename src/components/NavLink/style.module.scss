@@ -1,0 +1,48 @@
+@import '../../colors';
+@import '../../mixins';
+
+.nav-item {
+  margin-right: 27px;
+}
+
+.nav-item:last-child {
+  margin-right: 0px;
+}
+
+.nav-item_vertical {
+  margin: 21px 0px 0px -1px;
+}
+
+.nav-item_vertical:first-child {
+  margin: 0;
+}
+
+.nav-item_vertical:last-child {
+  margin: 21px 0px 0px;
+}
+
+.nav-link {
+  font-size: 16px;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  letter-spacing: -0.9px;
+  line-height: 16px;
+
+  cursor: pointer;
+  transition: 0.2s ease-in-out color;
+}
+
+.nav-link_white {
+  color: white;
+}
+
+.nav-link:hover {
+  color: $primary;
+}
+
+@include for-tablet-portrait-down {
+  .nav-link {
+    letter-spacing: 0px;
+  }
+}

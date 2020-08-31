@@ -1,0 +1,75 @@
+@import '../../colors';
+@import '../../mixins';
+
+.button {
+  max-width: 210px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  position: relative;
+  border-radius: 4px;
+  display: block;
+  background-color: $primary;
+  
+  color: $background;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+  transition: 0.2s ease-in-out background-color;
+}
+
+.button:hover, .button:focus {
+  background-color: $btn-hover;
+}
+
+.flat {
+  display: inline;
+  left: 1px;
+  background-color: transparent;
+  
+  line-height: 16px;
+  color: $primary;
+
+  transition: 0.2s ease-in-out color;
+}
+
+.flat:hover, .flat:focus {
+  background-color: transparent;
+  color: $btn-hover;
+}
+
+.disabled.disabled.disabled {
+  background-color: $btn-disabled-bg;
+  color: $btn-disabled;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.small {
+  max-width: 80px;
+}
+
+@include for-tablet-portrait-down {
+  .centered {
+    left: 0px;
+  }
+}
+
+@include for-phone-only {
+  .button {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .small {
+    margin: 0;
+  }
+}
