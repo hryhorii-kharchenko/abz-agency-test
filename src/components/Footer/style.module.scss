@@ -1,0 +1,32 @@
+@import '../../mixins';
+@import '../../colors';
+
+.footer {
+  height: 53px;
+  padding: 20px 15px 15px;
+  border-top: 1px solid $footer-border;
+  box-sizing: border-box;
+}
+
+.copyright {
+  margin: 0px auto;
+  left: -1px;
+  position: relative;
+  
+  @include p;
+  color: $text;
+  text-align: center;
+  line-height: 16px;
+}
+
+@include for-tablet-portrait-down {
+  .copyright {
+    left: 5px;
+  }
+}
+
+@include for-phone-only {
+  .copyright {
+    left: 0px;
+  }
+}
