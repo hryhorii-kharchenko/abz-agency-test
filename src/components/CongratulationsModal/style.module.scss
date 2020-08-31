@@ -1,0 +1,64 @@
+@import '../../colors';
+@import '../../mixins';
+
+.modal-wrapper {
+  max-width: 432px;
+  width: 100%;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.modal {
+  width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.title {
+  margin: 15px 0px 20px 14px;
+
+  @include h2;
+  line-height: 24px;
+}
+
+.text-container {
+  padding: 19px 0px 22px;
+  border-top: 1px solid $modal-separator;
+  border-bottom: 1px solid $modal-separator;
+}
+
+.text {
+  margin: 0px 0px 0px 15px;
+
+  @include p;
+  line-height: 16px;
+}
+
+.btn-container {
+  padding: 16px 16px 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.cross-btn {
+  width: 42px;
+  height: 42px;
+  padding: 15px;
+  border: 0;
+  top: 7px;
+  right: 2px;
+  position: absolute;
+  background-color: initial;
+  cursor: pointer;
+}
+
+.cross-icon {
+  width: 100%;
+}
