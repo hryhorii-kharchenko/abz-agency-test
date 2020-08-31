@@ -1,0 +1,60 @@
+@mixin h1-desktop {
+  font-size: 50px;
+  line-height: 54px;
+  font-weight: normal;
+}
+
+@mixin h1-tablet {
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: normal;
+}
+
+@mixin h1-mobile {
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: normal;
+}
+
+@mixin h1 {
+  @include h1-desktop;
+
+  @include for-tablet-portrait-down {
+    @include h1-tablet;
+  }
+  
+  @include for-phone-only {
+    @include h1-mobile;
+  }
+}
+
+@mixin no-text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin h2 {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: normal;
+}
+
+@mixin h2-no-overflow {
+  @include h2;
+  @include no-text-overflow;
+}
+
+@mixin p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait-down {
+  @media (max-width: 900px) { @content; }
+}

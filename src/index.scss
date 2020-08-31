@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=PT+Sans&family=Source+Sans+Pro&display=swap');
+@import './colors';
+@import './mixins';
+
+* {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.nav-link_active.nav-link_active {
+  color: $secondary;
+}
+
+.tooltip {
+  padding: 10px 11px 6px;
+  border-radius: 4px;
+  box-shadow: 2.5px 3.2px 8px 0 rgba(0, 0, 0, 0.3);
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+}
+
+.user-card__name_long.user-card__name_long {
+  margin: 15px auto 0px;
+}
+
+@include for-tablet-portrait-down {
+  .user-card__name_long.user-card__name_long {
+    margin: 15px auto 5px;
+  }
+}
+
+@include for-phone-only {
+  .user-card__name_long.user-card__name_long {
+    margin: 15px auto 4px;
+  }
+}
