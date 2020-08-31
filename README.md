@@ -1,4 +1,4 @@
-# abz.agency React test project
+# React Test Project for abz.agency
 
 ## Available Scripts
 
