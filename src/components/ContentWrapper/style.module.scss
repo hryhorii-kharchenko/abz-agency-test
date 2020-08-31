@@ -1,0 +1,13 @@
+@import '../../mixins';
+
+.content-wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0px 31px;
+}
+
+@include for-phone-only {
+  .content-wrapper {
+    padding: 0px 15px;
+  }
+}

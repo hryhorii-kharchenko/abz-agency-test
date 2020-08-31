@@ -1,0 +1,88 @@
+@import '../../colors';
+@import '../../mixins';
+
+.users {
+  margin: 0 auto;
+  padding: 152px 0px 160px;
+  background-color: $background2;
+}
+
+.title {
+  margin: 0px auto -10px;
+  padding: 0px 0px 10px;
+  left: -1px;
+  position: relative;
+
+  @include h1;
+  @include no-text-overflow;
+  color: $heading;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 17px auto 76px;
+  left: -1px;
+  position: relative;
+  
+  @include p;
+  color: $text;
+  text-align: center;
+}
+
+.container {
+  margin: -58px -50px 37px;
+  padding: 0px 49px 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@include for-tablet-portrait-down {
+  .users {
+    padding: 113px 0px 120px;
+  }
+
+  .title {
+    left: 1px;
+    position: relative;
+  }
+
+  .subtitle {
+    margin: 18px auto 76px;
+    left: 0px;
+  }
+
+  .container {
+    margin: -60px 0px 36px;
+    padding: 0px 6px 0px 8px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+@include for-phone-only {
+  .users {
+    padding: 75px 0px 80px;
+  }
+
+  .title {
+    left: 0px;
+  }
+
+  .subtitle {
+    margin: 9px auto 38px;
+  }
+
+  .container {
+    margin: -42px auto 38px;
+    padding: 0px;
+  }
+}

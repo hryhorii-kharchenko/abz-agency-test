@@ -1,0 +1,81 @@
+@import '../../colors';
+@import '../../mixins';
+
+.register {
+  padding: 150px 0px 164px;
+}
+
+.title {
+  margin: 0px auto -10px;
+  padding: 0px 0px 10px;
+  left: -1px;
+  position: relative;
+
+  @include h1;
+  @include no-text-overflow;
+  color: $heading;
+  text-align: center;
+}
+
+.subtitle {
+  max-width: 446px;
+  margin: 17px auto 29px;
+  position: relative;
+  
+  @include p;
+  color: $text;
+  text-align: center;
+}
+
+.container {
+  max-width: 468px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  left: 1px;
+}
+
+@include for-tablet-portrait-down {
+  .register {
+    padding: 111px 0px 118px;
+  }
+
+  .title {
+    left: 4px;
+  }
+
+  .subtitle {
+    margin: 19px auto 30px;
+    left: 4px;
+
+    line-height: 22px;
+  }
+
+  .container {
+    max-width: 475px;
+    padding: 0px 0px 0px 8px;
+    left: 0;
+    box-sizing: border-box;
+  }
+}
+
+@include for-phone-only {
+  .register {
+    margin: 0px auto;
+    padding: 75px 0px 80px;
+  }
+
+  .title {
+    left: 1px;
+  }
+
+  .subtitle {
+    margin: 19px auto 30px;
+    padding: 0px 7px;
+    left: -1px;
+  }
+
+  .container {
+    padding: 0;
+  }
+}
