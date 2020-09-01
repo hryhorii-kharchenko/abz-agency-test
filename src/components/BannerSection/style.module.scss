@@ -7,6 +7,7 @@
   background-image: url('../../assets/img/bg/banner-photo-w680.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media
@@ -111,6 +112,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 1300px)
 @include for-tablet-portrait-down {
   .banner {
     padding: 60px 0px 65px;
+    background-position: initial;
   }
 
   .container {

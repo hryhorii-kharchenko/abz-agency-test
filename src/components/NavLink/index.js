@@ -36,16 +36,17 @@ function NavLink({ to, onClick, children, isWhite, isVertical }) {
 }
 
 NavLink.defaultProps = {
+  onClick: null,
   isWhite: false,
   isVertical: false,
 };
 
 NavLink.propTypes = {
   to: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.string.isRequired,
-  isWhite: PropTypes.bool.isRequired,
-  isVertical: PropTypes.bool.isRequired,
+  isWhite: PropTypes.bool,
+  isVertical: PropTypes.bool,
 };
 
 export default NavLink;

@@ -78,14 +78,11 @@ function SideDrawer({ isActive, deactivate }) {
 
 SideDrawer.defaultProps = {
   isActive: false,
-  isAuth: false,
 };
 
 SideDrawer.propTypes = {
   isActive: PropTypes.bool,
   deactivate: PropTypes.func,
-  isAuth: PropTypes.bool,
-  logOut: PropTypes.func.isRequired,
 };
 
 export default SideDrawer;
