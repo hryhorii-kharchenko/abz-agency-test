@@ -1,5 +1,12 @@
 # React Test Project for abz.agency
 
+Third-party libraries used:
+
+- react-aria-modal;
+- react-input-mask;
+- react-scroll;
+- react-tooltip.
+
 ## Available Scripts
 
 In the project directory, you can run:
