@@ -13,7 +13,6 @@ function Backdrop({ onClick, isActive, zIndex, backgroundColor, opacity }) {
         backgroundColor,
         opacity: isActive ? opacity : '0%',
         zIndex: isActive ? zIndex : '-999',
-        transition: isActive ? 'opacity 0.3s ease-in-out' : '',
       }}
       styleName={styleName}
     />
