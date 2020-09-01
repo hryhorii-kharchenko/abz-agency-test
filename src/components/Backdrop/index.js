@@ -11,7 +11,7 @@ function Backdrop({ onClick, isActive, zIndex, backgroundColor, opacity }) {
       onClick={onClick}
       style={{
         backgroundColor,
-        opacity: isActive ? opacity : '0%',
+        // opacity: isActive ? opacity : '0%',
         zIndex: isActive ? zIndex : '-999',
       }}
       styleName={styleName}
@@ -22,7 +22,7 @@ function Backdrop({ onClick, isActive, zIndex, backgroundColor, opacity }) {
 Backdrop.defaultProps = {
   isActive: false,
   zIndex: '999',
-  backgroundColor: '#000',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
   opacity: '50%',
 };
 
