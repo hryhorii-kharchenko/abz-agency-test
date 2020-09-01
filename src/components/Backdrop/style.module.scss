@@ -5,10 +5,9 @@
   left: 0;
   position: fixed;
   overflow: hidden;
-
-  // transition: all 0.3s ease-in-out;
+  display: none;
 }
 
-// .active {
-//   opacity: 70%;
-// }
+.active {
+  display: block;
+}
