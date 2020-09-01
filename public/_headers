@@ -1,2 +1,5 @@
 /*
   Content-Security-Policy: default-src 'self';
+  X-XSS-Protection: 1;
+  X-Frame-Options: SAMEORIGIN;
+  X-Content-Type-Options: nosniff;
