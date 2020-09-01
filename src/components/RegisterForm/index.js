@@ -64,6 +64,22 @@ class CheckoutForm extends React.Component {
     this.fileInputRef.current.value = null;
   };
 
+  validateForm() {
+    const { name, email, phone, photo } = this.state;
+
+    const nameErrorMsg = this.validateName(name);
+    const emailErrorMsg = this.validateEmail(email);
+    const phoneErrorMsg = this.validatePhone(phone);
+    const photoErrorMsg = this.checkPhoto(photo);
+
+    this.setState({
+      nameErrorMsg,
+      emailErrorMsg,
+      phoneErrorMsg,
+      photoErrorMsg,
+    });
+  }
+
   setIsModalOpen = (value) => {
     this.setState({ isModalOpen: value });
   };
@@ -196,26 +212,19 @@ class CheckoutForm extends React.Component {
     return;
   }
 
-  checkPhoto() {
-    if (
-      this.state.photo === 'Upload your photo' ||
-      this.state.photo === 'No file chosen'
-    ) {
-      this.setState({
-        photo: 'No file chosen',
-        photoErrorMsg: 'Choose a photo',
-      });
-      return false;
-    }
+  checkPhoto(value) {
+    if (value === 'Upload your photo' || value === 'No file chosen')
+      return 'Choose a photo';
 
-    return true;
+    return '';
   }
 
   onSubmit = (event) => {
     event.preventDefault();
 
-    const { setUserId } = this.props;
+    this.validateForm();
 
+    const { setUserId } = this.props;
     const {
       name,
       email,
@@ -228,7 +237,6 @@ class CheckoutForm extends React.Component {
       photoErrorMsg,
     } = this.state;
 
-    this.checkPhoto();
     const isValid =
       name &&
       email &&
@@ -236,10 +244,6 @@ class CheckoutForm extends React.Component {
       position &&
       photo &&
       !(nameErrorMsg || emailErrorMsg || phoneErrorMsg || photoErrorMsg);
-
-    // this.setState({
-    //   isCheckoutRequestLoading: true,
-    // });
 
     if (!isValid) {
       return;
@@ -348,7 +352,6 @@ class CheckoutForm extends React.Component {
               placeholder="Your name"
               errorMessage={nameErrorMsg}
               onChange={this.nameChangeHandler}
-              isRequired
             />
             <Input
               id={idPrefix + 'email'}
@@ -359,7 +362,6 @@ class CheckoutForm extends React.Component {
               placeholder="Your email"
               errorMessage={emailErrorMsg}
               onChange={this.emailChangeHandler}
-              isRequired
             />
             <Input
               id={idPrefix + 'phone'}
@@ -371,7 +373,6 @@ class CheckoutForm extends React.Component {
               assistiveMessage="Еnter phone number in open format"
               errorMessage={phoneErrorMsg}
               onChange={this.phoneChangeHandler}
-              isRequired
             />
             <RadioToolbar
               title="Select your position"
@@ -387,7 +388,6 @@ class CheckoutForm extends React.Component {
               value={photo}
               errorMessage={photoErrorMsg}
               onChange={this.photoChangeHandler}
-              isRequired
             />
           </div>
           <Button type="submit" isCentered>
